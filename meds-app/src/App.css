@@ -47,3 +47,10 @@
 .none{
   visibility: hidden;
 }
+
+
+
+.priceSort{
+  margin-top: -5px;
+  font-size: 13px;
+}
