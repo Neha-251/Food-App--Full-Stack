@@ -13,6 +13,11 @@ export const Navbar = () => {
         setPrice(changedPrice);
     }
 
+    const handlePriceApply = () => {
+       
+        navigate(`filter/price/${price}`)
+    }
+
    const handleChange = (e) => {
       let brand = e.target.value;
       navigate(`/filter/brand/${brand}`)
@@ -54,10 +59,13 @@ export const Navbar = () => {
                     step="10"
                 />
                 <p className="priceSort">{price}</p>
+                <button onClick={handlePriceApply}>Apply</button>
             </div>
 
 
-           
+           <Link to="/">
+           <button>Clear Filter</button>
+           </Link>
 
         </nav>
     )
