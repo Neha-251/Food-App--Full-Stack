@@ -1,63 +1,26 @@
-const mongoose = require("mongoose");
+const mongoose =  require("mongoose");
 
 
-const foodSchema = new mongoose.Schema(
+const productSchema = new mongoose.Schema(
     {
-      idMeal: {type: String},
-      strMeal: {type: String},
-      strDrinkAlternate: {type: String},
-      strCategory: {type: String},
-      strArea: {type: String},
-      strINstructions: {type: String},
-      strMealThumb: {type: String},
-      strTags: {type: String},
-      strYoutube: {type: String},
-      strIngredient1: {type: String},
-      strIngredient2: {type: String},
-      strIngredient3: {type: String},
-      strIngredient4: {type: String},
-      strIngredient5: {type: String},
-      strIngredient6: {type: String},
-      strIngredient7: {type: String},
-      strIngredient8: {type: String},
-      strIngredient9: {type: String},
-      strIngredient10: {type: String},
-      strIngredient11: {type: String},
-      strIngredient12: {type: String},
-      strIngredient13: {type: String},
-      strIngredient14: {type: String},
-      strIngredient15: {type: String},
-      strIngredient16: {type: String},
-      strIngredient17: {type: String},
-      strIngredient18: {type: String},
-      strIngredient19: {type: String},
-      strIngredient20: {type: String},
-      strMeasure1: {type: String},
-      strMeasure2: {type: String},
-      strMeasure3: {type: String},
-      strMeasure4: {type: String},
-      strMeasure5: {type: String},
-      strMeasure6: {type: String},
-      strMeasure7: {type: String},
-      strMeasure9: {type: String},
-      strMeasure10: {type: String},
-      strMeasure11: {type: String},
-      strMeasure12: {type: String},
-      strMeasure13: {type: String},
-      strMeasure14: {type: String},
-      strMeasure15: {type: String},
-      strMeasure16: {type: String},
-      strMeasure17: {type: String},
-      strMeasure18: {type: String},
-      strMeasure19: {type: String},
-      strMeasure20: {type: String},
-      strSource: {type: String},
-      strImageSource: {type: String},
-      strCreativeCommonsConfirmed: {type: String},
-      dateModified: {type: String}
+        name:{type:String, required:true},
+        Tag:{type:String, required:true},
+        price:{type:Number, required:true},
+        stprice:{type:Number, required:true},
+        nos:{type:Number, required:true},
+        mkt:{type:String, required:true},
+        brand:{type:String, required:true},
+        cat:{type:String, required:true},
+        main:{type:String, required:true},
+        img:{type:String, required:true},
+
+    },
+    {
+        versionKey:false,
+        timestamps:true
     }
-)
+);
 
+const Product = mongoose.model("product",productSchema);
 
-const Food = mongoose.model("food", foodSchema);
-module.exports = Food;
+module.exports = Product

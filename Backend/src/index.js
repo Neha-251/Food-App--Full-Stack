@@ -8,6 +8,6 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use("/food", foodController);
+app.use("/meds", foodController);
 
 module.exports = app;
