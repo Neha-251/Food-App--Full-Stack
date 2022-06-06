@@ -23,9 +23,15 @@ router.get("", async(req, res) => {
             (await Food.find().countDocuments())
         );
 
+        //const foods = await Food.find().lean().exec();
+
         return res.status(200).send({ foods, totalPages });
+        //return res.status(200).send(foods);
+
     }
     catch(err) {
         return res.status(400).send(err);
     }
 })
+
+module.exports = router;
