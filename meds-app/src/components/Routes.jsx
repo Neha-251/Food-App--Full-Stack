@@ -1,9 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import { FilterBrand } from "./filterBrand";
-import { FilterTag } from "./filterTag";
-import { Navbar } from "./Navbar";
+import { Home } from "./home";
+
 import { ProductComponent } from "./products";
-import { FilterPrice } from "./FilterPrice";
 
 
 
@@ -12,17 +10,12 @@ import { FilterPrice } from "./FilterPrice";
 export const AllRoutes = () => {
     return (
         <>
-          <Navbar/>
+          
+         <Routes>
+           <Route path="/" element={<Home/>}></Route>
+           <Route path="/product" element={<ProductComponent/>}></Route>
+         </Routes>
          
-          {/* <ProductComponent /> */}
-
-          <Routes>
-              <Route to="/" element={<ProductComponent />}></Route>
-              <Route to="/filter/tag/:tag" element={<FilterTag />}> </Route>
-              <Route to="/filter/brand/:brand" element={<FilterBrand />}></Route>
-              <Route to="/filter/price/:price" element={<FilterPrice />}></Route>
-
-          </Routes>
         </>
     )
 }
